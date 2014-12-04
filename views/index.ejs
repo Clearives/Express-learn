@@ -1,0 +1,32 @@
+<%- include head %>
+<div class="banner-mas">
+	<div class="container">
+		<h1>欢迎来到 2ivesblog</h1>
+		<p>2ivesblog 是一个基于 Node.js 的微博系统。</p>
+		<p class="">
+			<a class="btn btn-primary" href="/login">登录</a>
+			<a class="btn btn-default" href="/reg">立即注册</a>
+			
+			
+		</p>
+	</div>
+</div>
+
+<p><%= success %></p>
+<div class="row">
+	
+	<% posts.forEach(function (post, index) { %>
+	<div class="col-sm-12 col-lg-4">
+	  <p><h2><a class="p-title" href="#"><%= post.title %></a></h2></p>
+	  <p class="info">
+	    作者：<a href="#"><%= post.name %></a> | 
+	    日期：<%= post.time.minute %>
+	  </p>
+	  <p><%- post.post %></p>
+	  </div>
+	<% }) %>
+</div>
+
+
+
+<%- include footer %>
